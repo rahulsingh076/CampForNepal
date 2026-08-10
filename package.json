@@ -1,0 +1,41 @@
+{
+  "name": "camp-for-nepal",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Camp For Nepal repository with a frontend demo and V2-ready backend scaffold.",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@camp-for-nepal/frontend --",
+    "dev:frontend": "npm run dev --workspace=@camp-for-nepal/frontend --",
+    "dev:backend": "npm run dev --workspace=camp-for-nepal-backend",
+    "build": "npm run build --workspace=@camp-for-nepal/frontend",
+    "preview": "npm run preview --workspace=@camp-for-nepal/frontend",
+    "start:backend": "npm run start --workspace=camp-for-nepal-backend",
+    "validate:data": "npm run validate:data --workspace=@camp-for-nepal/frontend",
+    "check:routes": "npm run check:routes --workspace=@camp-for-nepal/frontend",
+    "smoke": "npm run smoke --workspace=@camp-for-nepal/frontend",
+    "check": "npm run check --workspace=@camp-for-nepal/frontend",
+    "seed:catalog": "npm run seed:catalog --workspace=camp-for-nepal-backend",
+    "seed:catalog:reset": "npm run seed:catalog:reset --workspace=camp-for-nepal-backend",
+    "smoke:public": "npm run smoke:public --workspace=camp-for-nepal-backend",
+    "test:backend": "npm run test --workspace=camp-for-nepal-backend",
+    "check:backend": "npm run check --workspace=camp-for-nepal-backend",
+    "test:auth": "npm run test:auth --workspace=camp-for-nepal-backend",
+    "bootstrap:super-admin": "npm run bootstrap:super-admin --workspace=camp-for-nepal-backend",
+    "verify:auth": "npm run verify:auth --workspace=camp-for-nepal-backend",
+    "test:inquiries": "npm run test:inquiries --workspace=camp-for-nepal-backend",
+    "test:media-cms": "npm run test:media-cms --workspace=camp-for-nepal-backend",
+    "verify:b08": "npm run verify:b08 --workspace=camp-for-nepal-backend",
+    "verify:inquiries": "npm run verify:inquiries --workspace=camp-for-nepal-backend"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "mongodb": "^7.5.0"
+  }
+}

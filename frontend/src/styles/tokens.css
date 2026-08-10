@@ -1,0 +1,250 @@
+/* Design tokens for the whole site — Tailwind CSS v4 reads these instead of a config file.
+   Every colour below was contrast-checked; the notes mark the pairs that are not safe. */
+/* "static" emits every token as a CSS variable even when no utility class uses it.
+   Without it Tailwind tree-shakes unused tokens, and anything reading a token at
+   runtime — var(--color-…) in an inline style — silently resolves to nothing. */
+@theme static {
+  /* ---------------------------------------------------------------- Fonts */
+  /* Fraunces is reserved for display and headings; Manrope carries all UI and body copy. */
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* --------------------------------------------------------------- Colour */
+  /* Primary — deep forest green. Brand surfaces, headers, footers. */
+  --color-primary-50: #f1f5f2;
+  --color-primary-100: #dee9e1;
+  --color-primary-200: #bfd2c5;
+  --color-primary-300: #97b4a1;
+  --color-primary-400: #6c8e78;
+  --color-primary-500: #486b55;
+  --color-primary-600: #345140;
+  --color-primary-700: #253d2f;
+  --color-primary-800: #1a2c21;
+  --color-primary-900: #101c15;
+
+  /* Sand — warm parchment. sand-50 is the page background. */
+  --color-sand-50: #fbf7f0;
+  --color-sand-100: #f6efe3;
+  --color-sand-200: #efe3d0;
+  --color-sand-300: #e3d2b8;
+  --color-sand-400: #d2bc9b;
+  --color-sand-500: #bca07b;
+  --color-sand-600: #9d8261;
+  --color-sand-700: #7c654b;
+  --color-sand-800: #5a4938;
+  --color-sand-900: #3a2f25;
+
+  /* Amber — the booking CTA. Never used as text below amber-600. */
+  --color-amber-50: #fef6ec;
+  --color-amber-100: #fce9ce;
+  --color-amber-200: #f8d29f;
+  --color-amber-300: #f0b268;
+  --color-amber-400: #d9832a;
+  --color-amber-500: #b65a0e;
+  --color-amber-600: #97470b;
+  --color-amber-700: #7a390c;
+  --color-amber-800: #5c2c0c;
+  --color-amber-900: #40200b;
+  --color-amber-950: initial;
+
+  /* Glacier — accent for info, links on dark, quiet highlights. */
+  --color-glacier-50: #eef6fa;
+  --color-glacier-100: #d6eaf3;
+  --color-glacier-200: #afd5e7;
+  --color-glacier-300: #7fb8d4;
+  --color-glacier-400: #4e97bb;
+  --color-glacier-500: #2e7a9f;
+  --color-glacier-600: #226485;
+  --color-glacier-700: #1a506c;
+  --color-glacier-800: #163e53;
+  --color-glacier-900: #112b3a;
+
+  /* Stone — the warm text scale. stone-500 is the lightest readable step. */
+  --color-stone-50: #faf8f5;
+  --color-stone-100: #f1ede7;
+  --color-stone-200: #e3ddd4;
+  --color-stone-300: #c9c1b5;
+  --color-stone-400: #a39a8c;
+  --color-stone-500: #746b5e;
+  --color-stone-600: #665e53;
+  --color-stone-700: #4e473e;
+  --color-stone-800: #37312b;
+  --color-stone-900: #211d19;
+  --color-stone-950: initial;
+
+  /* Success and danger — states only, never decoration. */
+  --color-success-50: #edf8ef;
+  --color-success-100: #d3f0d9;
+  --color-success-200: #a9e0b3;
+  --color-success-300: #78c887;
+  --color-success-400: #47a75c;
+  --color-success-500: #2b8a43;
+  --color-success-600: #1f6e35;
+  --color-success-700: #185729;
+  --color-success-800: #14421f;
+  --color-success-900: #0d2c15;
+
+  --color-danger-50: #fdf3f1;
+  --color-danger-100: #fae2dd;
+  --color-danger-200: #f3c6be;
+  --color-danger-300: #e79c8f;
+  --color-danger-400: #d46f5e;
+  --color-danger-500: #b94a38;
+  --color-danger-600: #9e3626;
+  --color-danger-700: #802b1e;
+  --color-danger-800: #61221a;
+  --color-danger-900: #421815;
+
+  /* Card surface, warmer than pure white. */
+  --color-cream: #fdfaf4;
+
+  /* Dark gradient laid over hero photography so white text stays readable. */
+  --color-hero-overlay-from: rgb(16 28 21 / 0.15);
+  --color-hero-overlay-to: rgb(12 24 18 / 0.82);
+
+  /* ----------------------------------------------------------- Type scale */
+  /* Display and h1-h2 are fluid so nothing overflows a 360px screen. */
+  --text-display: clamp(2.5rem, 1.2rem + 5.5vw, 4.5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: 0em;
+  --text-display--font-weight: 500;
+
+  --text-h1: clamp(2rem, 1.3rem + 3vw, 3rem);
+  --text-h1--line-height: 1.06;
+  --text-h1--letter-spacing: 0em;
+  --text-h1--font-weight: 500;
+
+  --text-h2: clamp(1.625rem, 1.3rem + 1.6vw, 2.125rem);
+  --text-h2--line-height: 1.16;
+  --text-h2--letter-spacing: 0em;
+  --text-h2--font-weight: 500;
+
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.28;
+  --text-h3--letter-spacing: 0em;
+  --text-h3--font-weight: 600;
+
+  --text-h4: 1.1875rem;
+  --text-h4--line-height: 1.4;
+  --text-h4--letter-spacing: 0em;
+  --text-h4--font-weight: 600;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.7;
+  --text-body--letter-spacing: 0em;
+  --text-body--font-weight: 400;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-small--letter-spacing: 0em;
+  --text-small--font-weight: 500;
+
+  /* Lead paragraphs: the opening of an article or a page intro. One step
+     above body, never large enough to compete with a heading. */
+  --text-body-lg: 1.1875rem;
+  --text-body-lg--line-height: 1.65;
+  --text-body-lg--letter-spacing: 0em;
+  --text-body-lg--font-weight: 400;
+
+  /* Metadata under a heading, image credits, timestamps. Slightly loosened
+     tracking because it is usually set in stone-600 at a small size. */
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.45;
+  --text-caption--letter-spacing: 0.01em;
+  --text-caption--font-weight: 500;
+
+  /* Interface roles. Both sit at 14px so a button beside a nav link lines up,
+     and both are Manrope — never the display face. */
+  --text-button: 0.875rem;
+  --text-button--line-height: 1.2;
+  --text-button--letter-spacing: 0.005em;
+  --text-button--font-weight: 600;
+
+  --text-nav: 0.875rem;
+  --text-nav--line-height: 1.2;
+  --text-nav--letter-spacing: 0.005em;
+  --text-nav--font-weight: 500;
+
+  /* -------------------------------------------------------------- Spacing */
+  /* 0.25rem base means p-1=4px, p-2=8px, p-4=16px … the whole 4px scale. */
+  --spacing: 0.25rem;
+
+  /* --------------------------------------------------------------- Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* -------------------------------------------------------------- Shadows */
+  /* Warm-tinted, never black — a black shadow on sand looks cheap.
+     All seven steps are redefined: Tailwind ships 2xs/xs/2xl too, and leaving
+     them at their defaults would let a black shadow back in through the side door. */
+  --shadow-2xs: 0 1px 1px rgb(58 47 37 / 0.04);
+  --shadow-xs: 0 1px 2px rgb(58 47 37 / 0.05);
+  --shadow-sm: 0 1px 2px rgb(58 47 37 / 0.05), 0 1px 3px rgb(58 47 37 / 0.04);
+  --shadow-md: 0 2px 4px rgb(58 47 37 / 0.04), 0 6px 12px -2px rgb(58 47 37 / 0.07);
+  --shadow-lg: 0 4px 8px -2px rgb(58 47 37 / 0.05), 0 16px 28px -6px rgb(58 47 37 / 0.11);
+  --shadow-xl: 0 8px 16px -4px rgb(58 47 37 / 0.06), 0 32px 56px -12px rgb(58 47 37 / 0.15);
+  --shadow-2xl: 0 12px 24px -6px rgb(58 47 37 / 0.08), 0 48px 80px -16px rgb(58 47 37 / 0.18);
+
+  /* --------------------------------------------------- Media aspect ratios */
+  --aspect-landscape: 4 / 3;
+  --aspect-portrait: 3 / 4;
+  --aspect-hero: 2 / 1;
+  --aspect-editorial: 16 / 9;
+  /* A4 landscape. Certificates and permits are documents: this shows one whole
+     without the crop a 4:3 card frame puts through the middle of the text. */
+  --aspect-document: 1.414 / 1;
+
+  /* ------------------------------------------------------------- Z-index */
+  /* Stacking order lives here so no component invents its own number. */
+  --z-base: 0;
+  --z-sticky: 10;
+  --z-header: 30;
+  --z-dropdown: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+
+  /* Header and fixed mobile controls share these offsets with anchor links. */
+  --sticky-header-offset: 5rem;
+  --mobile-action-clearance: 5.5rem;
+
+  /* ----------------------------------------------------- Container widths */
+  /* max-w-screen-xl (1280px) is the default for page content; narrow is for
+     long-form reading, wide only for immersive hero and gallery bands. */
+  --container-screen-narrow: 48rem;
+  --container-screen-xl: 80rem;
+  --container-screen-2xl: 96rem;
+
+  /* Comfortable reading measure for long paragraphs. */
+  --readable-measure: 68ch;
+
+  /* --------------------------------------------------------------- Motion */
+  /* Soft ease-out: quick to start, long gentle settle. Nothing bounces. */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
+
+  /* How far a revealed element travels before it settles. */
+  --reveal-sm: 8px;
+  --reveal-md: 16px;
+  --reveal-lg: 24px;
+
+  /* Hard ceilings from the design rules. Never raise these. */
+  --lift-y: -6px;
+  --lift-scale: 1.02;
+  --zoom-scale: 1.08;
+  --parallax-max: 12px;
+  --magnetic-max: 6px;
+
+  /* One quiet local detail: contour lines that sit behind photographic heroes. */
+  --topography-line: rgb(255 255 255 / 0.14);
+  --topography-step: 64px;
+
+  /* Every Tailwind transition utility gets the soft easing by default. */
+  --default-transition-timing-function: var(--ease-soft);
+}

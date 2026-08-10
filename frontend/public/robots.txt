@@ -1,0 +1,23 @@
+# Camp For Nepal — V1
+#
+# Private areas are also marked noindex in the page head at runtime, but a
+# crawler should never need to fetch them to find that out.
+#
+# Before going live, replace the Sitemap host below with the real canonical
+# domain and generate sitemap.xml from published public URLs only. Both are
+# deployment tasks: this frontend has no server to build a sitemap at request
+# time. See docs/BACKEND_HANDOFF.md.
+
+User-agent: *
+Disallow: /admin
+Disallow: /admin/
+Disallow: /customer
+Disallow: /customer/
+Disallow: /login
+Disallow: /register
+Disallow: /welcome
+Disallow: /design-preview
+
+Allow: /
+
+# Sitemap: https://REPLACE-WITH-CANONICAL-DOMAIN/sitemap.xml

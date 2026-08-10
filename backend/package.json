@@ -1,0 +1,39 @@
+{
+  "name": "camp-for-nepal-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Camp For Nepal API. Replaces the frontend mock dataClient internals without changing its contract.",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/server.js",
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "check": "find src scripts -name '*.js' -print0 | xargs -0 -n1 node --check && echo 'syntax OK'",
+    "test": "node --test",
+    "seed:catalog": "node --env-file=.env scripts/seedCatalog.js",
+    "seed:catalog:reset": "node --env-file=.env scripts/resetCatalog.js",
+    "smoke:public": "node --env-file=.env scripts/smokePublicApi.js",
+    "test:auth": "node --env-file=.env --test tests/auth/*.test.js",
+    "test:media-cms": "node --test tests/media-cms/*.test.js",
+    "bootstrap:super-admin": "node --env-file=.env scripts/bootstrapSuperAdmin.js",
+    "verify:auth": "node --env-file=.env scripts/verifyAuth.js",
+    "test:inquiries": "node --env-file=.env --test --test-concurrency=1 tests/inquiries/*.test.js",
+    "verify:b08": "node scripts/verifyB08.js",
+    "verify:inquiries": "node --env-file=.env scripts/verifyInquiries.js"
+  },
+  "dependencies": {
+    "argon2": "^0.45.1",
+    "connect-mongo": "^6.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "mongoose": "^8.24.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.2.2"
+  }
+}

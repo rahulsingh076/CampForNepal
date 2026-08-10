@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Local environment. .env.example is the only committed template; every real
+# file below carries secrets. The authentication tests deliberately reuse .env
+# and switch database with AUTH_TEST_DATABASE_NAME, so there is no .env.test —
+# the rule stays as a guard against one appearing by accident.
+.env
+.env.test
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Coverage and build output
+coverage/
+dist/
+
+# OS and editor noise
+.DS_Store
+.idea/
+*.sw?
